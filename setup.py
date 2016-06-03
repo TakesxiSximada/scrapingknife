@@ -12,7 +12,10 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        ''
+        'pycurl',
+        'selenium',
+        'progressbar',
+        'fake_useragent',
     ],
     entry_points="""\
     [console_scripts]
