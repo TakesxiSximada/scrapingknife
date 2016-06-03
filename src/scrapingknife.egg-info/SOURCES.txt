@@ -1,7 +1,0 @@
-src/scrapingknife/__init__.py
-src/scrapingknife.egg-info/PKG-INFO
-src/scrapingknife.egg-info/SOURCES.txt
-src/scrapingknife.egg-info/dependency_links.txt
-src/scrapingknife.egg-info/entry_points.txt
-src/scrapingknife.egg-info/not-zip-safe
-src/scrapingknife.egg-info/top_level.txt
