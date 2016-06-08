@@ -123,7 +123,16 @@ class Downloader:
         self.close()
 
     def close(self):
-        self.browser.close()
+        os.system('pkill phantomjs')  # orz
+        # try:
+        #     self.browser.close()
+        # except Exception as err:
+        #     logger.debug('cannot close browser: %r', err)
+
+        # try:
+        #     self.browser.quit()
+        # except Exception as err:
+        #     logger.debug('cannot quit browser: %r', err)
 
     def can_output_to_file(self, path, force, raise_exception=False):
         """Whether the file can be output"""
