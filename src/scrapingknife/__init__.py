@@ -1,7 +1,6 @@
 #! /usr/bin/env python
 """Scraping Knife
 """
-import re
 import os
 import sys
 import logging
@@ -67,7 +66,6 @@ class ContentDownload(object):
             with open(path, 'w+b') as fp:
                 self.curl.setopt(pycurl.WRITEDATA, fp)
                 self.curl.perform()
-                self.curl.close()
         finally:
             self.finish()
 
@@ -117,6 +115,15 @@ class Downloader:
         self.browser = create_browser()
         self.download = ContentDownload(verbose=verbose)
         self.search_url = SearchURL()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self):
+        self.close()
+
+    def close(self):
+        self.browser.close()
 
     def can_output_to_file(self, path, force, raise_exception=False):
         """Whether the file can be output"""
